@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1A365D;
+  --secondary: #2A628F;
+  --accent: #FFC107;
+  --danger: #DC3545;
+  --success: #28A745;
+  --warning: #FF9800;
+  --light: #F8F9FA;
+  --dark: #343A40;
+  --neutral-100: #F8F9FA;
+  --neutral-200: #E9ECEF;
+  --neutral-300: #DEE2E6;
+  --neutral-400: #CED4DA;
+  --neutral-500: #ADB5BD;
+  --neutral-600: #6C757D;
+  --neutral-700: #495057;
+  --neutral-800: #343A40;
+  --neutral-900: #212529;
+}
+
+@layer base {
+  html {
+    font-family: 'Open Sans', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  body {
+    @apply bg-neutral-100 text-neutral-800;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:translate-y-[-2px];
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90 shadow-md;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-neutral-900 hover:bg-accent/90 shadow-md;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6 transition-all duration-300;
+  }
+  
+  .input {
+    @apply px-4 py-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-secondary/50;
+  }
+}
+
+.prose {
+  @apply text-neutral-800;
+  max-width: 65ch;
+  line-height: 1.75;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-4 mt-8 font-heading;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mb-3 mt-6 font-heading;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mb-2 mt-4 font-heading;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 pl-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
